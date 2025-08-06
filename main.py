@@ -34,7 +34,8 @@ def draw():
         bullet.draw()
     screen.draw.text("score:"+str(score),(50,50))
     if gameover:
-        screen.draw.text("Gameover",(300,600))
+        screen.draw.text("Gameover",center = (600,300),color = "white",fontsize = 40)
+        print("hello")
         time.sleep(5)
         
 
@@ -69,7 +70,7 @@ def update():
         if player.countdown == 0:
             player.dead = False
             player.countdown = 90
-    if len(bugs)==0:
+    if len(bugs)==0 and gameover == False:
         gameover = True
     if gameover == False:
         if len(bugs) >= 0 and bugs[0].x < 0 or bugs[-1].x > WIDTH-80:
